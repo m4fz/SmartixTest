@@ -1,7 +1,6 @@
 package com.smartix_test.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Null;
 import lombok.*;
 
 import java.io.Serializable;
@@ -11,11 +10,9 @@ import java.time.LocalDate;
 @Table(name = "user_Profile")
 @Getter
 @Setter
-@ToString
-@EqualsAndHashCode
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class UserProfile implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

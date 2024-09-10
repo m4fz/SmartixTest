@@ -2,21 +2,16 @@ package com.smartix_test.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Null;
 import lombok.*;
-
 import java.io.Serializable;
 import java.math.BigInteger;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "user_payment_list")
 @Getter
 @Setter
-@ToString
 @Builder
-@EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserPayment implements Serializable {
