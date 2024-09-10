@@ -27,7 +27,7 @@ public class UserProfile implements Serializable {
     @Column(unique = true, nullable = false)
     private String email;
     @Enumerated(value = EnumType.STRING)
-    @Column(nullable = false)
+    @Column(nullable = false, length = 6)
     private Gender gender;
     @Column(nullable = false)
     private LocalDate dateOfBirth;
