@@ -107,7 +107,7 @@ public class UserAccountServiceImpl implements UserAccountService{
         return userAccountRepo.findByPhoneNumber(phoneNumber).orElseThrow(()-> new UserAccountNotFoundException("User" + phoneNumber + "not found"));
     }
 
-    private static boolean isValidEmail(String email){
+    public static boolean isValidEmail(String email){
         Matcher matcher = VALID_EMAIL_ADDRESS.matcher(email);
         return matcher.matches();
     }
