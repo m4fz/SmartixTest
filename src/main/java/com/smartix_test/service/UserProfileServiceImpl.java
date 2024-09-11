@@ -28,24 +28,24 @@ public class UserProfileServiceImpl implements UserProfileService{
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
 
-        if (request.getFirstName() != null & !request.getFirstName().equals(entity.getFirstName()) ){
+        if (request.getFirstName() != null){
             entity.setFirstName(request.getFirstName());
         }
-        if (request.getLastName() != null  & !request.getLastName().equals(entity.getLastName())){
+        if (request.getLastName() != null){
             entity.setLastName(request.getLastName());
         }
-        if (request.getMiddleName() != null  & !request.getMiddleName().equals(entity.getMiddleName())){
+        if (request.getMiddleName() != null){
             entity.setMiddleName(request.getMiddleName());
         }
-        if (request.getEmail() != null  & !request.getEmail().equals(entity.getEmail())){
+        if (request.getEmail() != null){
             if (!UserAccountServiceImpl.isValidEmail(request.getEmail())){
                 return ResponseEntity.badRequest().body("Invalid email address");
             } else entity.setEmail(request.getEmail());
         }
-        if (request.getGender() != null  & request.getGender() != entity.getGender()){
+        if (request.getGender() != null){
             entity.setGender(request.getGender());
         }
-        if (request.getDateOfBirth() != null & request.getDateOfBirth() != entity.getDateOfBirth()){
+        if (request.getDateOfBirth() != null){
             entity.setDateOfBirth(request.getDateOfBirth());
         }
         userProfileRepo.save(entity);
